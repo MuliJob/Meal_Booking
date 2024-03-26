@@ -1,0 +1,33 @@
+{% extends 'base.html' %} 
+{% block title %} 
+  Confirm Page
+{% endblock %}
+
+{% block content %} 
+<table class="table table-hover table-dark">
+    <thead>
+        <tr>
+            
+            <th scope="col">MEAL ID</th>
+            <th scope="col">MEAL</th>
+            <th scope="col">DATE BOOKED</th>
+            <th scope="col">TIME SHEDULED</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        {% for booking in bookings %}
+        {% include 'includes/approval_modal.html'  %}
+            <tr>
+                <td>{{ booking.id }}</td>
+                <td>{{ booking.meal }}</td>
+                <td>{{ booking.date_booked }}</td>
+                <td>{{ booking.time_sheduled }}</td>
+                <td>
+                    <button class="btn btn-outline btn-success" data-toggle="modal" data-target="#Modal-Approve-{{ booking.id }}" >Approve</button>    
+                </td>
+            </tr>
+        {% endfor %}    
+    </tbody>
+</table>
+{% endblock %}

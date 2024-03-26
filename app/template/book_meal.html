@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}
+Login Page
+{% endblock %}
+
+{% block content %}
+<body class="text-center">
+   <div class="container">
+        <form method="POST" class="form-signing" style="color:white">
+            {{ form.hidden_tag() }}
+            <img class="mb-4" src="https://ueab.ac.ke/wp-content/uploads/2023/04/cropped-cropped-LOGO-BARA-copy-300x300-1-300x300.png" alt="">
+            <h1 class="h3 mb-3 font-weight-normal">
+                Book Your Meal
+            </h1>
+            <br>
+            {{ form.meal.label() }}
+            {{ form.meal(class="form-control", placeholder="Enter Meal") }}
+
+            {{ form.time_sheduled.label() }}
+            {{ form.time_sheduled(class="form-control", placeholder="Shedule Meal") }}
+
+            <br>
+
+            {{ form.submit(class='btn btn-lg btn-block btn-primary') }}
+
+        </form>
+   </div>
+</body>  
+{% endblock %}
